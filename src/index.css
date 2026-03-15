@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply antialiased text-[#1d1d1f] bg-[#fbfbfd] dark:text-[#f5f5f7] dark:bg-black transition-colors duration-300;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/60 dark:bg-[#1c1c1e]/60 backdrop-blur-[40px] saturate-[1.8] border-b border-[#00000015] dark:border-[#ffffff15];
+    }
+
+    .glass-toolbar {
+        @apply bg-white/70 dark:bg-[#2c2c2e]/70 backdrop-blur-[30px] border-b border-[#00000010] dark:border-[#ffffff10];
+    }
+
+    .glass-panel {
+        @apply bg-white dark:bg-[#1c1c1e] shadow-apple dark:shadow-apple-dark border border-[#00000008] dark:border-[#ffffff10];
+    }
+
+    .apple-btn {
+        @apply px-4 py-2 rounded-full font-medium transition-all active:scale-95;
+    }
+
+    .apple-btn-primary {
+        @apply apple-btn bg-[#0066cc] hover:bg-[#0071e3] text-white dark:bg-[#0a84ff] dark:hover:bg-[#409cff];
+        box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+    }
+
+    .dark .apple-btn-primary {
+        box-shadow: 0 2px 12px rgba(10, 132, 255, 0.4);
+    }
+
+    .apple-btn-secondary {
+        @apply apple-btn bg-[#f2f2f7] hover:bg-[#e5e5ea] text-[#1d1d1f] dark:bg-[#3a3a3c] dark:hover:bg-[#48484a] dark:text-[#f5f5f7];
+    }
+
+    .apple-copy-btn {
+        @apply flex items-center justify-center gap-2 px-6 py-2 rounded-full text-[14px] font-medium transition-all duration-300;
+        @apply bg-black hover:bg-black/80 text-white dark:bg-white dark:hover:bg-white/90 dark:text-black active:scale-95;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark .apple-copy-btn {
+        box-shadow: 0 2px 16px rgba(255, 255, 255, 0.15);
+    }
+
+    .apple-copy-btn-success {
+        @apply flex items-center justify-center gap-2 px-6 py-2 rounded-full text-[14px] font-medium transition-all duration-300;
+        @apply bg-[#34c759] hover:bg-[#34c759]/90 text-white dark:bg-[#32d74b] dark:hover:bg-[#32d74b]/90 active:scale-95;
+        box-shadow: 0 2px 12px rgba(52, 199, 89, 0.3);
+    }
+
+    .dark .apple-copy-btn-success {
+        box-shadow: 0 2px 12px rgba(50, 215, 75, 0.3);
+    }
+
+    .apple-export-btn {
+        @apply flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium transition-all duration-300;
+        @apply bg-[#f2f2f7] hover:bg-[#e5e5ea] text-[#1d1d1f] dark:bg-[#2c2c2e] dark:hover:bg-[#3a3a3c] dark:text-[#f5f5f7] border border-[#00000010] dark:border-[#ffffff10] shadow-sm active:scale-95;
+    }
+
+    /* 隐藏滚动条但保留滚动功能 */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .preview-device-shell {
+        @apply relative;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        background: linear-gradient(135deg, #e4e7ec 0%, #d5d9e2 20%, #eef0f5 50%, #d8dce5 80%, #c5cbd6 100%);
+        box-shadow:
+            inset 0 0 3px rgba(255, 255, 255, 0.8),
+            inset 0 0 1px 1px rgba(255, 255, 255, 0.9),
+            inset 0 -2px 6px rgba(100, 110, 130, 0.3),
+            0 12px 32px -10px rgba(0, 0, 0, 0.15),
+            0 24px 48px -20px rgba(0, 0, 0, 0.1),
+            0 0 80px rgba(255, 255, 255, 0.8);
+        transform-origin: center top;
+        transform: scale(var(--device-scale, 1));
+        z-index: 10;
+    }
+
+    .preview-device-shell::before {
+        content: '';
+        position: absolute;
+        inset: -40px;
+        background: radial-gradient(circle at 50% 60%, rgba(200, 210, 230, 0.6) 0%, transparent 60%);
+        z-index: -1;
+        border-radius: inherit;
+        filter: blur(30px);
+        opacity: 0.9;
+        pointer-events: none;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dark .preview-device-shell::before {
+        background: radial-gradient(circle at 50% 60%, rgba(10, 132, 255, 0.15) 0%, rgba(0, 0, 0, 0.5) 60%);
+        opacity: 1;
+    }
+
+    .dark .preview-device-shell {
+        background: linear-gradient(135deg, #43454b 0%, #2c2d31 20%, #50535a 50%, #303136 80%, #202124 100%);
+        box-shadow:
+            inset 0 0 4px rgba(255, 255, 255, 0.15),
+            inset 0 0 1px 1px rgba(255, 255, 255, 0.1),
+            inset 0 -2px 6px rgba(0, 0, 0, 0.5),
+            0 12px 36px -10px rgba(0, 0, 0, 0.6),
+            0 24px 48px -20px rgba(0, 0, 0, 0.5),
+            0 0 100px rgba(0, 0, 0, 0.6);
+    }
+
+    .preview-device-mobile {
+        width: 520px;
+        height: 1080px;
+        flex-shrink: 0;
+        border-radius: 56px;
+        padding: 12px;
+    }
+
+    .preview-device-tablet {
+        width: 720px;
+        height: 960px;
+        flex-shrink: 0;
+        border-radius: 40px;
+        padding: 16px;
+    }
+
+    /* Screen contains the background and boundary */
+    .preview-device-screen {
+        @apply overflow-hidden relative;
+        flex: 1;
+        min-height: 0;
+        border-radius: 40px;
+        background: #ffffff;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+        /* very subtle boundary instead of black border */
+        pointer-events: auto;
+    }
+
+    .dark .preview-device-screen {
+        background: #1c1c1e;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .preview-device-tablet .preview-device-screen {
+        border-radius: 28px;
+    }
+
+    /* Inner scrolled area */
+    .preview-device-scroll {
+        height: 100%;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        background: transparent;
+        border-radius: 38px;
+        transition: border-radius 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .preview-device-tablet .preview-device-scroll {
+        border-radius: 16px;
+    }
+
+    /* Home Indicator */
+    .preview-device-home {
+        position: absolute;
+        left: 50%;
+        bottom: 22px;
+        transform: translateX(-50%);
+        width: 130px;
+        height: 5px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: invert(1);
+        pointer-events: none;
+        z-index: 10;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dark .preview-device-home {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: none;
+    }
+
+    .dark .preview-device-side {
+        background: linear-gradient(180deg, #5a5d65 0%, #303236 100%);
+        box-shadow:
+            inset 1px 0 2px rgba(255, 255, 255, 0.15),
+            -1px 0 2px rgba(0, 0, 0, 0.5);
+    }
+}

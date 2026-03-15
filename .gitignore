@@ -1,0 +1,13 @@
+.DS_Store
+*.bak*
+node_modules/
+dist/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*.log
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
