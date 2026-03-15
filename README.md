@@ -2,9 +2,7 @@
 
 专为**微信公众号**与**内容创作者**打造的现代 Markdown 排版引擎。
 
-> **在线体验**：[https://publish.raphael.app](https://publish.raphael.app)
-
-![WeChat-Markdown 截图](media/screenshot.png)
+> **在线体验**：[https://markdown.gmlart.cn/](https://markdown.gmlart.cn/)
 
 
 ## 功能特性
@@ -25,22 +23,7 @@
 
 每套主题在背景色、字体、标题、代码块、引用、表格等元素上都有独立设计，切换即可感受完全不同的排版风格。
 
-<p align="center">
-  <a href="media/demo.mp4">
-    <img src="media/record.gif" alt="WeChat-Markdown 功能演示（点击播放 MP4）" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://publish.raphael.app">
-    <img src="https://img.shields.io/badge/%E2%96%B6%20Live%20Preview-Visit%20Pages-2ea44f?style=for-the-badge" alt="Live Preview on Pages" />
-  </a>
-  <a href="media/demo.mp4">
-    <img src="https://img.shields.io/badge/%E2%AC%87%20Download%20Demo-MP4-0969da?style=for-the-badge" alt="Download MP4 demo" />
-  </a>
-</p>
-<p align="center">
-  <sub>点击上方动图或按钮，可直接跳转页面体验或观看 MP4 高清演示。</sub>
-</p>
+
 
 ### 一键复制到公众号
 
