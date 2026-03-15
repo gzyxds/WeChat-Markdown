@@ -1,4 +1,4 @@
-import { Moon, Sun, Github } from 'lucide-react';
+import { Moon, Sun, Github, Cloud, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface HeaderProps {
@@ -21,6 +21,28 @@ export default function Header({ themeMode, onToggleTheme }: HeaderProps) {
             </div>
 
             <div className="flex items-center gap-4">
+                <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="https://www.cloudcvm.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                    title="优刻云"
+                >
+                    <Cloud size={20} />
+                </motion.a>
+                <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="https://www.urlnet.cn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                    title="艺创AI"
+                >
+                    <Sparkles size={20} />
+                </motion.a>
                 <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
